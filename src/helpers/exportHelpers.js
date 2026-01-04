@@ -10,13 +10,13 @@ const generateComponentCSS = (component, index, canvasWidth) => {
   const className = `component-${index}`;
   
   // Calculate percentages relative to canvas width (assumes canvas is full container width)
-  const leftPercent = canvasWidth > 0 ? ((position.left / canvasWidth) * 100).toFixed(2) : 0;
+  const leftPercent = canvasWidth > 0 ? ((position.x / canvasWidth) * 100).toFixed(2) : 0;
   const widthPercent = canvasWidth > 0 ? ((props.width / canvasWidth) * 100).toFixed(2) : 0;
   
   let styles = `  .${className} {\n`;
   styles += `    position: absolute;\n`;
   styles += `    left: ${leftPercent}%;\n`;
-  styles += `    top: ${position.top}px;\n`;
+  styles += `    top: ${position.y}px;\n`;
   
   switch (type) {
     case 'text':
