@@ -15,7 +15,7 @@ describe('exportHelpers', () => {
         {
           id: '1',
           type: 'text',
-          position: { left: 100, top: 50 },
+          position: { x: 100, y: 50 },
           props: {
             content: 'Hello',
             fontSize: 16,
@@ -36,9 +36,9 @@ describe('exportHelpers', () => {
 
     test('exports multiple components', () => {
       const components = [
-        { id: '1', type: 'text', position: { left: 0, top: 0 }, props: {} },
-        { id: '2', type: 'flexbox', position: { left: 100, top: 100 }, props: {} },
-        { id: '3', type: 'button', position: { left: 200, top: 200 }, props: {} }
+        { id: '1', type: 'text', position: { x: 0, y: 0 }, props: {} },
+        { id: '2', type: 'flexbox', position: { x: 100, y: 100 }, props: {} },
+        { id: '3', type: 'button', position: { x: 200, y: 200 }, props: {} }
       ];
       
       const result = exportToJSON(components, 75);
@@ -53,7 +53,7 @@ describe('exportHelpers', () => {
         {
           id: 'test-id',
           type: 'textarea',
-          position: { left: 150, top: 75 },
+          position: { x: 150, y: 75 },
           props: {
             content: 'Multi-line\ntext',
             fontSize: 14,
@@ -79,7 +79,7 @@ describe('exportHelpers', () => {
     test('imports valid JSON', () => {
       const jsonString = JSON.stringify({
         components: [
-          { id: '1', type: 'text', position: { left: 0, top: 0 }, props: {} }
+          { id: '1', type: 'text', position: { x: 0, y: 0 }, props: {} }
         ],
         canvasWidth: 100
       });
@@ -111,9 +111,9 @@ describe('exportHelpers', () => {
     test('imports multiple components correctly', () => {
       const jsonString = JSON.stringify({
         components: [
-          { id: '1', type: 'text', position: { left: 0, top: 0 }, props: { content: 'A' } },
-          { id: '2', type: 'flexbox', position: { left: 50, top: 50 }, props: { backgroundColor: '#fff' } },
-          { id: '3', type: 'image', position: { left: 100, top: 100 }, props: { src: 'test.jpg' } }
+          { id: '1', type: 'text', position: { x: 0, y: 0 }, props: { content: 'A' } },
+          { id: '2', type: 'flexbox', position: { x: 50, y: 50 }, props: { backgroundColor: '#fff' } },
+          { id: '3', type: 'image', position: { x: 100, y: 100 }, props: { src: 'test.jpg' } }
         ],
         canvasWidth: 75
       });
@@ -141,7 +141,7 @@ describe('exportHelpers', () => {
         {
           id: '1',
           type: 'text',
-          position: { left: 120, top: 50 },
+          position: { x: 120, y: 50 },
           props: {
             content: 'Hello',
             fontSize: 16,
@@ -169,7 +169,7 @@ describe('exportHelpers', () => {
         {
           id: '1',
           type: 'textarea',
-          position: { left: 60, top: 100 },
+          position: { x: 60, y: 100 },
           props: {
             content: 'Multi-line\ntext',
             fontSize: 14,
@@ -197,7 +197,7 @@ describe('exportHelpers', () => {
         {
           id: '1',
           type: 'flexbox',
-          position: { left: 100, top: 100 },
+          position: { x: 100, y: 100 },
           props: {
             backgroundColor: '#f0f0f0',
             width: 200,
@@ -223,7 +223,7 @@ describe('exportHelpers', () => {
         {
           id: '1',
           type: 'image',
-          position: { left: 0, top: 0 },
+          position: { x: 0, y: 0 },
           props: {
             src: 'https://example.com/image.jpg',
             alt: 'Test Image',
@@ -246,7 +246,7 @@ describe('exportHelpers', () => {
         {
           id: '1',
           type: 'button',
-          position: { left: 100, top: 200 },
+          position: { x: 100, y: 200 },
           props: {
             text: 'Click me',
             url: 'https://example.com',
@@ -271,7 +271,7 @@ describe('exportHelpers', () => {
         {
           id: '1',
           type: 'text',
-          position: { left: 60, top: 50 },
+          position: { x: 60, y: 50 },
           props: {
             content: 'Test',
             width: 120,
@@ -298,13 +298,13 @@ describe('exportHelpers', () => {
         {
           id: '1',
           type: 'text',
-          position: { left: 0, top: 0 },
+          position: { x: 0, y: 0 },
           props: { content: 'First', width: 100, height: 30, fontSize: 16, color: '#000', fontWeight: 'normal', textAlign: 'left' }
         },
         {
           id: '2',
           type: 'flexbox',
-          position: { left: 200, top: 100 },
+          position: { x: 200, y: 100 },
           props: { backgroundColor: '#fff', width: 200, height: 100, padding: 16, borderRadius: 4 }
         }
       ];
@@ -338,7 +338,7 @@ describe('exportHelpers', () => {
         {
           id: '1',
           type: 'text',
-          position: { left: 100, top: 50 },
+          position: { x: 100, y: 50 },
           props: {
             content: 'Test',
             fontSize: 16,
@@ -352,7 +352,7 @@ describe('exportHelpers', () => {
         {
           id: '2',
           type: 'flexbox',
-          position: { left: 200, top: 150 },
+          position: { x: 200, y: 150 },
           props: {
             backgroundColor: '#f0f0f0',
             width: 300,
@@ -385,7 +385,7 @@ describe('exportHelpers', () => {
         {
           id: '1',
           type: 'text',
-          position: { left: 0, top: 0 },
+          position: { x: 0, y: 0 },
           props: { content: 'At origin', width: 100, height: 30, fontSize: 16, color: '#000', fontWeight: 'normal', textAlign: 'left' }
         }
       ];
@@ -401,7 +401,7 @@ describe('exportHelpers', () => {
         {
           id: '1',
           type: 'text',
-          position: { left: 0, top: 0 },
+          position: { x: 0, y: 0 },
           props: { content: '<script>alert("xss")</script>', width: 100, height: 30, fontSize: 16, color: '#000', fontWeight: 'normal', textAlign: 'left' }
         }
       ];
@@ -417,7 +417,7 @@ describe('exportHelpers', () => {
         {
           id: '1',
           type: 'text',
-          position: { left: 0, top: 0 },
+          position: { x: 0, y: 0 },
           props: { content: '', width: 100, height: 30, fontSize: 16, color: '#000', fontWeight: 'normal', textAlign: 'left' }
         }
       ];
@@ -432,7 +432,7 @@ describe('exportHelpers', () => {
         {
           id: '1',
           type: 'text',
-          position: { left: 10, top: 10 },
+          position: { x: 10, y: 10 },
           props: { content: 'Small', width: 50, height: 30, fontSize: 16, color: '#000', fontWeight: 'normal', textAlign: 'left' }
         }
       ];
@@ -448,7 +448,7 @@ describe('exportHelpers', () => {
         {
           id: '1',
           type: 'flexbox',
-          position: { left: 0, top: 0 },
+          position: { x: 0, y: 0 },
           props: { backgroundColor: '#fff', width: 1200, height: 100, padding: 0, borderRadius: 0 }
         }
       ];

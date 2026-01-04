@@ -352,14 +352,6 @@ export default function App() {
           isOpen={isPropertiesOpen}
           onClose={closeProperties}
         />
-
-        {/* Mobile toggle button */}
-        <button 
-          className="app__mobile-toggle"
-          onClick={selectedId ? toggleProperties : togglePalette}
-        >
-          {selectedId ? '⚙️ Properties' : '🧩 Components'}
-        </button>
       </div>
 
       {/* Export/Import Modal */}
