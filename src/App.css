@@ -1,0 +1,200 @@
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.app__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app__header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.app__header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.app__canvas-width {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.app__canvas-width-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  white-space: nowrap;
+}
+
+.app__canvas-width-input {
+  width: 60px;
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+  outline: none;
+}
+
+.app__canvas-width-input:focus {
+  border-color: #007bff;
+}
+
+.app__canvas-width-unit {
+  font-size: 13px;
+  font-weight: 500;
+  color: #666;
+}
+
+.app__button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.app__button--primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.app__button--primary:hover {
+  background-color: #0056b3;
+}
+
+.app__button--secondary {
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.app__button--secondary:hover {
+  background-color: #e9ecef;
+}
+
+.app__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.app__button:disabled:hover {
+  background-color: #f8f9fa;
+}
+
+.app__workspace {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Mobile Menu Toggle */
+.app__mobile-toggle {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.app__mobile-toggle:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.app__mobile-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .app__header h1 {
+    font-size: 20px;
+  }
+  
+  .app__header-actions {
+    gap: 8px;
+  }
+  
+  .app__button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .app__canvas-width-label {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .app__header {
+    padding: 12px 16px;
+  }
+  
+  .app__header h1 {
+    font-size: 18px;
+  }
+  
+  .app__header-actions {
+    gap: 6px;
+  }
+  
+  .app__button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  
+  .app__button span {
+    display: none;
+  }
+  
+  .app__mobile-toggle {
+    display: block;
+  }
+
+  .app__canvas-width-input {
+    width: 50px;
+    font-size: 13px;
+  }
+
+  .app__canvas-width-unit {
+    font-size: 13px;
+  }
+}
+

@@ -1,0 +1,235 @@
+.properties-panel {
+  width: 320px;
+  background-color: #f8f9fa;
+  border-left: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .properties-panel {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .properties-panel {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 320px;
+    max-width: 85vw;
+    z-index: 900;
+    transform: translateX(100%);
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .properties-panel--open {
+    transform: translateX(0);
+  }
+}
+
+.properties-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.properties-panel__header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.properties-panel__delete-btn {
+  padding: 6px 12px;
+  border: none;
+  background-color: #dc3545;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.properties-panel__delete-btn:hover {
+  background-color: #c82333;
+}
+
+.properties-panel__content {
+  padding: 20px;
+  flex: 1;
+}
+
+.properties-panel__component-info {
+  margin-bottom: 20px;
+  padding: 8px 12px;
+  background-color: #e7f3ff;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.properties-panel__component-type {
+  font-size: 12px;
+  font-weight: 600;
+  color: #007bff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.properties-panel__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.properties-panel__empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.properties-panel__empty p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.component-properties {
+  display: flex;
+  flex-direction: column;
+}
+
+.properties-panel__actions {
+  margin-bottom: 20px;
+}
+
+.properties-panel__action-btn {
+  width: 100%;
+  padding: 10px 16px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.properties-panel__action-btn:hover {
+  background-color: #f8f9fa;
+  border-color: #007bff;
+}
+
+.properties-panel__section {
+  margin-bottom: 20px;
+}
+
+.properties-panel__section-title {
+  margin: 0 0 12px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.properties-panel__layer-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.properties-panel__layer-btn {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.properties-panel__layer-btn:hover {
+  background-color: #f8f9fa;
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.properties-panel__divider {
+  height: 1px;
+  background-color: #ddd;
+  margin: 20px 0;
+}
+
+.properties-panel__overlay {
+  display: none;
+}
+
+.properties-panel__close {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .properties-panel__overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 899;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .properties-panel__overlay--visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  .properties-panel__close {
+    display: block;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .properties-panel__close:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .properties-panel__header {
+    padding-left: 56px;
+  }
+}

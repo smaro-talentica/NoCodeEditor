@@ -1,0 +1,46 @@
+.canvas {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  touch-action: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+  .canvas {
+    border: none;
+    border-top: 1px solid #ddd;
+  }
+}
+
+.canvas--drag-over {
+  background-color: #f0f8ff;
+  border: 2px dashed #007bff;
+}
+
+.canvas__drop-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 40px;
+  background-color: rgba(0, 123, 255, 0.1);
+  border: 2px dashed #007bff;
+  border-radius: 8px;
+  color: #007bff;
+  font-size: 16px;
+  font-weight: 500;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .canvas__drop-indicator {
+    padding: 16px 24px;
+    font-size: 14px;
+  }
+}
