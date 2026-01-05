@@ -1,6 +1,15 @@
 import { exportToHTML, exportToJSON, importFromJSON } from './exportHelpers';
 
 describe('exportHelpers', () => {
+  // Suppress console.error during tests that intentionally throw errors
+  beforeEach(() => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    console.error.mockRestore();
+  });
+
   describe('exportToJSON', () => {
     test('exports empty components array', () => {
       const result = exportToJSON([], 100);
